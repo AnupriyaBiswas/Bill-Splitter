@@ -1,38 +1,381 @@
+body {
+  margin: 0;
+  background: #050509;
+  color: #f9f3e6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 .App {
-  text-align: center;
+  max-width: 1200px;
+  margin: 20px auto 40px auto;
+  padding: 0 24px 40px 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Header */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, #f4c259, #242227 60%);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  margin-bottom: 22px;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #050509;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #f4c259;
+  font-weight: 700;
+  font-size: 22px;
 }
 
-.App-link {
-  color: #61dafb;
+.app-title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.04em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #f9f3e6cc;
+}
+
+/* Layout */
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .layout-grid {
+    grid-template-columns: 1.2fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Cards */
+
+.card {
+  background: #121218;
+  border-radius: 14px;
+  padding: 14px 16px 16px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #2b2933;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.card-header h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #1f1d26;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Drag target */
+
+.droppable {
+  border-style: solid;
+}
+
+/* Layout helpers */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+/* Inputs & buttons */
+
+.input {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid #32323b;
+  background: #181821;
+  color: #f9f3e6;
+  outline: none;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #7d768a;
+}
+
+.input.small {
+  width: 130px;
+}
+
+.input:focus {
+  border-color: #f4c259;
+  box-shadow: 0 0 0 1px #f4c25955;
+}
+
+.btn-round {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f8d36a, #f0ab3c);
+  color: #201b10;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.btn-round:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-pill {
+  border-radius: 999px;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  background: #262230;
+  color: #f4c259;
+}
+
+.btn-pill:hover {
+  background: #352c42;
+}
+
+.btn-main {
+  margin: 10px auto 20px auto;
+  display: block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f7d46d, #f3ac3f);
+  color: #1a1308;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.btn-main:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  border: none;
+  background: transparent;
+  color: #f97373;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+/* Chips */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #f4c259;
+  color: #18120a;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chip-outline {
+  background: transparent;
+  border: 1px solid #f4c25977;
+  color: #f9f3e6;
+}
+
+.editable-chip {
+  background: #262230;
+  color: #f9f3e6;
+}
+
+.chip-input {
+  border: none;
+  background: transparent;
+  color: inherit;
+  width: 90px;
+  font-size: 13px;
+  outline: none;
+}
+
+.chip-icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #f4c259;
+  font-size: 13px;
+}
+
+.chip-inline-input {
+  border: none;
+  background: transparent;
+  color: inherit;
+  width: 80px;
+  font-size: 13px;
+  outline: none;
+}
+
+.chip-inline-input.price {
+  width: 60px;
+  text-align: right;
+}
+
+/* Items */
+
+.item-card {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #181820;
+  border: 1px solid #2a2833;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+/* Checkboxes */
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox {
+  font-size: 13px;
+  color: #d4cddf;
+}
+
+.checkbox input {
+  margin-right: 4px;
+}
+
+/* Labels */
+
+.label-inline {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #d4cddf;
+  gap: 4px;
+}
+
+/* Results */
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 4px;
+  border-bottom: 1px dashed #2c2837;
+  font-size: 14px;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.caret {
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+.breakdown {
+  padding: 6px 6px 4px 6px;
+  background: #181821;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 2px 0;
+}
+
+.muted {
+  font-size: 13px;
+  color: #8b829b;
+}
+
+.btn-download {
+  display: block;
+  margin: 8px auto 20px auto;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #9b8bff, #6b5bc2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+}
+
+.btn-download:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+}
+
+.btn-download:active {
+  transform: translateY(0);
 }

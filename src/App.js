@@ -12,7 +12,7 @@ function App() {
   const [drinkItems, setDrinkItems] = useState([]);
   const [bills, setBills] = useState({}); // name -> total
   const [breakdown, setBreakdown] = useState({}); // name -> [{item, base, tax, tip, treatDelta}]
-  const [taxCGST, setTaxCGST] = useState(2.55);
+  const [taxCGST, setTaxCGST] = useState(2.5);
   const [taxSGST, setTaxSGST] = useState(2.5);
   const [treats, setTreats] = useState([]);
   const [tip, setTip] = useState(0);
@@ -644,7 +644,7 @@ function App() {
                         editItemName('food', item.id, e.target.value)
                       }
                     />
-                    <span> · ₹</span>
+                    <span>  ₹</span>
                     <input
                       className="chip-inline-input price"
                       type="number"
@@ -881,16 +881,17 @@ function App() {
             />
           </section>
 
-                    {/* Calculate & results */}
-          <button onClick={calculateBill} className="btn-main">
-            ⚖️ Calculate Split
-          </button>
-
-          {Object.keys(bills).length > 0 && (
-            <button onClick={downloadPDF} className="btn-download">
-              📥 Download PDF
+          <div className="button-row">
+            <button onClick={calculateBill} className="btn-main">
+              ⚖️ Calculate Split
             </button>
-          )}
+            {Object.keys(bills).length > 0 && (
+              <button onClick={downloadPDF} className="btn-download">
+                📥 Download PDF
+              </button>
+            )}
+          </div>
+
 
           <section className="card">
             <div className="card-header">

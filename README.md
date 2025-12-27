@@ -1,145 +1,84 @@
-Baap Ka Paisa – Smart Bill Splitter
-"Baap Ka Paisa" is an interactive bill-splitting web app that lets you split restaurant/party bills item‑wise between friends, with support for tax, tip, treats, and detailed per‑person breakdowns.
-Live demo: https://splitit-git-main-anupriya-biswas-projects.vercel.app/
+<div align="center">
 
-Features
-Friend management
+# 💰 Baap Ka Paisa  
+### Smart, Item‑wise Bill Splitter
 
-Add friends with a quick input and button.
-Edit or delete any friend.
-Friends are shown as neat chips for easy selection.
+A slick React web app to split restaurant/party bills **fairly** between friends – item by item, with tax, tip, treats, drag‑and‑drop and a beautiful PDF export.
 
-Item-wise splitting
-Separate sections for Food and Drinks.
-
-Each item has:
-Name
-Price
-Toggle for “Inclusive of tax”
-Checkboxes to mark who shared that item.
-“Select all” option per item.
-Drag & drop between lists
-Drag items between Food and Drinks lists using native HTML5 drag and drop.
-​
-
-Taxes, tips, and treats
-Configurable SGST and CGST percentages.
-Global tip amount split equally among all friends.
-
-Treat feature:
-One friend can pay extra.
-Excess amount automatically reduces others’ shares.
-
-Detailed breakdown
-
-Final section shows:
-Total amount owed per person.
-Expand/collapse breakdown showing each item’s contribution (base, tax, tip, treat adjustments).
-
-PDF export
-“Download PDF” button generates a nicely formatted bill PDF using jsPDF and html2canvas.
-​
-
-Includes:
-Summary table
-Item breakdown
-Tax & tip info
-Per-person breakdown
-Timestamp and branding.
-
-Modern UI
-Gold–black palette with cards, chips, and icons.
-Responsive two-column layout that uses the full viewport width on larger screens.
-
-Tech Stack
-Frontend: React (Create React App)
-
-Styling: Custom CSS
-
-PDF Generation:
-jspdf – client-side PDF generation
-​
-
-html2canvas – capture HTML content as an image for PDFs
-​
-
-Getting Started
-Prerequisites
-Node.js (LTS recommended)
-
-npm (comes with Node.js)
-
-Installation
-Clone the repository:
-
-bash
-git clone <https://github.com/AnupriyaBiswas/Bill-Splitter>
-cd <Bill-Splitter>
-Install dependencies:
-bash
-npm install
-This installs React, React Scripts, and all other dependencies including jspdf and html2canvas.
-​
-
-Start the development server:
-bash
-npm start
-The app runs at http://localhost:3000 by default.
-
-Usage
-Add friends
-Type a name in the “Friends” input and click +.
-Edit a friend by clicking the ✏ icon.
-Delete a friend using the ✕ icon.
-
-Add items
-In Food or Drinks, enter item name and price, then click +.
-Edit name/price inline.
-Mark “Inclusive of tax” if the price already includes tax.
-Select which friends shared the item via checkboxes or use Select all.
-Drag items between Food and Drinks lists as needed.
-
-Configure tax, tip, and treats
-
-Set SGST and CGST percentages in the Tax section.
-
-Enter a tip amount in the Tip section.
-
-Add Treats:
-Choose a friend.
-Enter the amount they are paying.
-The app adjusts everyone’s shares accordingly.
-Calculate bill
-
-Click ⚖️ Calculate Split to compute each person’s total.
-Click on a person’s row to expand/collapse their detailed breakdown.
-Download PDF
-After calculating, click 📥 Download PDF to export a descriptive PDF of the bill split.
-
-Project Structure
-src/App.js
-Core logic:
-    State for friends, items, taxes, tip, treats
-    Calculation logic and breakdown generation
-    Drag & drop handlers
-    PDF generation with jsPDF and html2canvas
-    src/App.css
-    Gold–black theme
-    Layout (two-column grid)
-    Styles for cards, chips, buttons, and breakdown.
-
-Deployment
-The app is deployed on Vercel:
+🔗 **Live App:**  
 https://splitit-git-main-anupriya-biswas-projects.vercel.app/
 
-To deploy your own fork:
-Push the project to a GitHub repository.
-Import the repo into Vercel.
-Vercel will detect Create React App and deploy automatically with sensible defaults.
-​
-​
+</div>
 
-Future Improvements
-Persistent storage (e.g., localStorage or backend) to save past bills.
-Support for multiple currencies and custom rounding rules.
-Optional user authentication for multi-session tracking.
+---
+
+## ✨ Features
+
+- **Friend management**
+  - Add friends quickly with an input + button flow.
+  - Edit or delete any friend from the chip-style list.
+  - Clean horizontal layout using pill chips.
+
+- **Item-wise splitting (Food & Drinks)**
+  - Separate sections for **Food** and **Drinks**.
+  - Each item has:
+    - Name
+    - Price
+    - “Inclusive of tax” toggle
+    - Per‑friend participation checkboxes.
+  - “Select all” shortcut per item.
+
+- **Drag & drop between lists**
+  - Drag any item card from **Food ⮂ Drinks** using native HTML5 drag & drop.
+
+- **Taxes, tips & treats**
+  - Configurable **SGST** and **CGST** percentages.
+  - Global **tip** amount split equally among all friends.
+  - **Treats**:
+    - One friend can pay more than their share.
+    - Excess amount is intelligently distributed to reduce others’ dues.
+
+- **Per‑person breakdown**
+  - Summary card showing each person’s final amount.
+  - Click a name to **expand/collapse** a detailed breakdown:
+    - Base share
+    - Tax share
+    - Tip share
+    - Treat adjustments
+
+- **PDF export**
+  - “📥 Download PDF” generates a **clean, descriptive invoice‑style PDF** for the current split.
+  - Includes:
+    - Bill summary
+    - Item breakdown
+    - Tax & tip info
+    - Per‑person breakdown
+    - Timestamp + app branding
+
+- **Modern gold‑black UI**
+  - Custom CSS with a rich gold–black palette.
+  - Card‑based layout, icons, shadows and chips.
+  - Responsive two‑column grid that uses the full viewport on desktop but collapses gracefully on smaller screens.
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework:** React (Create React App)
+- **Styling:** Custom CSS (no Tailwind)
+- **PDF Generation:**  
+  - [`jspdf`](https://www.npmjs.com/package/jspdf) – client‑side PDF creation  
+  - [`html2canvas`](https://www.npmjs.com/package/html2canvas) – render HTML sections to images for embedding in PDFs
+- **Deployment:** Vercel
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** (LTS recommended)
+- **npm** (bundled with Node)
+
+### Clone & install
+
